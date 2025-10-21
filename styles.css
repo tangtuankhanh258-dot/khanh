@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,100..900&family=Inter:wght@100..900&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f7f3f0;
+  color: #333;
+}
+h1, h2, h3 {
+  font-family: 'Roboto Serif', serif;
+}
+
+/* Hiệu ứng header */
+header {
+  position: sticky;
+  top: 0;
+  transition: all 0.3s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  z-index: 50;
+}
+header.scrolled {
+  background-color: #f7f3f0;
+  backdrop-filter: none;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Animation */
+.feature-item.initial-state {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Mobile menu */
+#mobile-menu-overlay {
+  transition: transform 0.3s ease-out;
+  transform: translateY(-100%);
+}
+#mobile-menu-overlay.open {
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #tinh-nang .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  #tinh-nang .feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
